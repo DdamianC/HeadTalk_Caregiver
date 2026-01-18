@@ -1,0 +1,37 @@
+body{
+background:#050508;
+color:white;
+font-family:Segoe UI;
+text-align:center;
+}
+
+h1{color:#00ffcc;font-size:3rem}
+
+.box{
+background:#111;
+padding:30px;
+margin:30px auto;
+width:80%;
+border-radius:20px;
+}
+
+input{
+font-size:1.4rem;
+padding:15px;
+width:80%;
+}
+
+button{
+font-size:1.4rem;
+padding:15px 40px;
+background:#00ffcc;
+border:none;
+border-radius:15px;
+cursor:pointer;
+}
+
+#msgs{
+font-size:1.6rem;
+margin-top:20px;
+text-align:left;
+}
