@@ -2,23 +2,38 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Panel Opiekuna</title>
+<title>BCI – Opiekun</title>
 <link rel="stylesheet" href="caregiver.css">
 </head>
 <body>
 
-<h1>🧠 Panel Opiekuna</h1>
+<h1>🧠 Kokpit Opiekuna</h1>
 
-<div class="box">
-<h2>Zadaj pytanie (TAK / NIE)</h2>
-<input id="q" placeholder="Np. Czy boli Cię brzuch?">
-<button onclick="sendQ()">WYŚLIJ</button>
+<div class="grid">
+  <div class="panel">
+    <h2>🎥 Podgląd pacjenta</h2>
+    <img id="cam" />
+  </div>
+
+  <div class="panel">
+    <input id="q" placeholder="Zadaj pytanie">
+    <button onclick="sendQ()">Wyślij</button>
+  </div>
+
+  <div class="panel">
+    <h2>📨 Wiadomości</h2>
+    <div id="msgs"></div>
+  </div>
+
+  <div class="panel">
+    <h2>✔ TAK / NIE</h2>
+    <div id="answers"></div>
+  </div>
 </div>
 
-<div class="box">
-<h2>Odpowiedzi pacjenta</h2>
-<div id="msgs"></div>
-</div>
+<footer>
+Damian Cybula – Inżynieria Biomedyczna 2.2 – Telemedycyna 2025/2026
+</footer>
 
 <script src="caregiver.js"></script>
 </body>
