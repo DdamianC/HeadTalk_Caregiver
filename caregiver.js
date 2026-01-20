@@ -15,35 +15,26 @@ async function load(){
  const d=await r.json();
  const box=document.getElementById("msgs");
  box.innerHTML="";
- if(!d)return;
- Object.values(d).reverse().forEach(m=>{
+ if(d) Object.values(d).reverse().forEach(m=>{
   const div=document.createElement("div");
-  div.innerText="🗨 "+m.text;
+  div.innerText=m.text;
   box.appendChild(div);
  });
-}
 
-async function loadAnswers(){
- const r=await fetch(`${DB}/answers.json`);
- const d=await r.json();
- const box=document.getElementById("answers");
- box.innerHTML="";
- if(!d)return;
- Object.values(d).reverse().forEach(a=>{
+ const r2=await fetch(`${DB}/answers.json`);
+ const d2=await r2.json();
+ const box2=document.getElementById("answers");
+ box2.innerHTML="";
+ if(d2) Object.values(d2).reverse().forEach(a=>{
   const div=document.createElement("div");
-  div.innerText="✔ "+a.value;
-  box.appendChild(div);
+  div.innerText=a.value;
+  box2.appendChild(div);
  });
+
+ const r3=await fetch(`${DB}/camera/current.json`);
+ const d3=await r3.json();
+ if(d3) document.getElementById("cam").src=d3.img;
 }
 
-async function loadCam(){
- const r=await fetch(`${DB}/camera/current.json`);
- const d=await r.json();
- if(d) document.getElementById("cam").src=d.img;
-}
+setInterval(load,1000);
 
-setInterval(()=>{
- load();
- loadAnswers();
- loadCam();
-},1000);
